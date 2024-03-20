@@ -90,7 +90,7 @@ elem_t pop (stack* stk)
             stk->capacity = 1;
 
         stk->data = (elem_t*) realloc(stk->data, stk->capacity * sizeof(stk->data));
-        assert(stk->data != NULL); // TODO maybe if (stk->capacity)
+        assert(stk->data != NULL);
     }
 
     stk->hash = hash_calc(stk);
@@ -102,7 +102,6 @@ void stack_dump_func (const stack* stk,     const int   line,
                       const char* filename, const char* function,
                       const char* name)
 {
-    printf (BLUE "\nЕГОР, СОСИ ХУЙ" RESET);
     printf ("\nStack name: " GREEN "%s\n" RESET, name);
     printf ("File where from dump was called: " GREEN "%s\n" RESET, filename);
     printf ("Line where from dump was called: " GREEN "%d\n" RESET, line);
